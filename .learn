@@ -11,4 +11,4 @@ topc:
 unit:
   - Node Basics
 lesson:
-  - Quick Overview and Introduction to Node.js
+  - Node.js Global Object
