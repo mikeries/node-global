@@ -284,6 +284,7 @@ Note: If you run the Node code in REPL, the result will be similar to browser Ja
 1. [Official Global Object Documentation](https://nodejs.org/api/globals.html)
 1. [Global Variables in Node.js](http://www.hacksparrow.com/global-variables-in-node-js.html)
 1. [Variables: Scopes, Environments, and Closures in Browser JavaScript](http://speakingjs.com/es5/ch16.html)
+2. [Node.js Global Namespace video](https://egghead.io/lessons/node-js-node-js-global-namespace)
 
 
 ---
