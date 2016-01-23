@@ -2,7 +2,7 @@
 
 ## Overview
 
-This lesson will cover the 
+This lesson will cover the global object, its properties, differences between browser JavaScript and Node when it comes to globals and scoping.
 
 ## Objectives
 
@@ -224,29 +224,7 @@ Know that `global` object has interfaces specific to Node. Others are the same a
 
 Note: Developers you can access them with or without referring to the `global` object. For example, both `global.process` and `process` work the same. 
 
-Modules and Buffer requires their own lessons, so we'll cover them one-by-one later. For now let's look more into `process`. 
-
-## Process
-
-`process` has a lengthy number of properties related to the currently running Node instance and the environment. 
-
-* `process.env`: Environmental variables
-* `process.pid`: Process ID 
-* `process.platform`: Platform, e.g., `darwin`
-* `process.cwd()`: Current working directory. Not always the same as `__dirname`.
-* `process.versions`: Versions of node, V8, zlib and other Node internal components
-* `process.features`: Features of this Node instance, e.g., `debug`p
-* `process.arch`: Architecture of this system, e.g., `x64`
-* `process.uptime()`: Time this process runs in seconds
-* `process.memoryUsage()`: The heap total and used numbers
-
-It also has methods to terminate the process:
-
-* `process.exit(1)`: Exit the current process with errors
-* `process.exit(0)`: Exit the current process with no errors
-* `process.kill(pid)`: Terminate a process with ID `pid`, e.g., to kill self is `process.kill(process.pid)`
-
-If this was a mouthful of information, refrain from worrying. Instead use this page when you need it and know that the system information can be found in `process`.
+Process, modules and Buffer requires their own lessons, so we'll cover them one-by-one later. For now let's look more into `process`. 
 
 ## Explicit and Implicit Global Scoping
 
