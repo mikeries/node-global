@@ -7,8 +7,8 @@ This lesson will cover the global object, its properties, differences between br
 ## Objectives
 
 1. Describe the global object
-1. Describe the global object properties: process, global API, etc.
-1. Describe the global scoping
+2. Describe the global object properties: process, global API, etc.
+3. Describe the global scoping
 
 ## Global Object
 
@@ -200,7 +200,7 @@ Or you can type `global` in Node REPL. The output would be similar to this:
 
 Let's cover the most important of them in more details.
 
-Note: Another name for `global` is `GLOBAL`. They are aliases. So `global.user` and `GLOBAL.user` are the same.
+Note: Another name for `global` is `GLOBAL`. They are aliases. Also, `global.user` and `GLOBAL.user` are the same.
 
 ## Global Object Properties
 
@@ -214,7 +214,7 @@ So what are the Node-specific global interfaces? Here's the list of Node global 
 * `__dirname`: Path and folder name of the current script
 * `_filename`: Filename of the current script 
 
-Know that `global` object has interfaces specific to Node. Others are the same as in browser JavaScript:
+Know that `global` object has interfaces specific to Node. There are interfaces that are the same as in browser JavaScript:
 
 * `setInterval()`
 * `setTimeout()`
@@ -224,7 +224,7 @@ Know that `global` object has interfaces specific to Node. Others are the same a
 
 Note: Developers you can access them with or without referring to the `global` object. For example, both `global.process` and `process` work the same. 
 
-Process, modules and Buffer requires their own lessons, so we'll cover them one-by-one later. For now let's look more into `process`. 
+`Process`, `modules` and `Buffer` require their own lessons, so we'll cover them one-by-one later. For now let's look more into `process`. 
 
 ## Explicit and Implicit Global Scoping
 
