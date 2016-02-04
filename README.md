@@ -10,11 +10,13 @@ This lesson will cover the global object, its properties, differences between br
 2. Describe the global object properties: process, global API, etc.
 3. Describe the global scoping
 
-## Global Object
+## Intro
 
 Node is JavaScript, right? Not exactly. While both Node and browser JavaScript are implementations of ECMAScript, they differ just as different flavors of browser JavaScript implementation can differ. For example, there might be some methods and functions in Internet Explorer or Firefox which are lacking in Safari or vice versa. 
 
 So the bottom line is while most of the browser JavaScript implementations and Node are similar, for example, `console.log()`, `setTimeout()`, Array and String functions, they differ drastically when it comes to global methods and properties (a.k.a. interfaces). There's no `window` in Node!
+
+## Global Object
 
 Why and what exactly is the difference? You see, in browsers we don't have the ability to import modules or work with file system (I'm writing about ES5 mostly). We also limited in what information we can get from the environment. The server or Node code can do much more than the browser, so we need to introduce some global interfaces. They live on the `global` object. So you can print them with this statement:
 
