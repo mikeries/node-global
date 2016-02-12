@@ -139,7 +139,7 @@ Object {admin: false} Object {admin: false} Object {admin: false}
 
 In other words `_user`, `window._user`, `user` and `window.user` will return `{admin: false}`.
 
-Now let's replace `window` with global for Node. What the result of this snippet would be if you run it as a separate file (`$ node main.js`)?
+Now let's replace `window` with global for Node. What the result of this snippet would be if you run it as a separate file (`node main.js`)?
 
 ```js
 user = {admin: false}
