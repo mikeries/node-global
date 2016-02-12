@@ -29,126 +29,9 @@ Or you can type `global` in Node REPL. The output would be similar to this:
 ```
 > global
 { DTRACE_NET_SERVER_CONNECTION: [Function],
-  DTRACE_NET_STREAM_END: [Function],
-  DTRACE_HTTP_SERVER_REQUEST: [Function],
-  DTRACE_HTTP_SERVER_RESPONSE: [Function],
-  DTRACE_HTTP_CLIENT_REQUEST: [Function],
-  DTRACE_HTTP_CLIENT_RESPONSE: [Function],
+  ...
   global: [Circular],
-  process:
-   process {
-     title: 'node',
-     version: 'v5.1.0',
-     moduleLoadList:
-      [ 'Binding contextify',
-        'Binding natives',
-        'NativeModule events',
-        ...
-        'NativeModule os',
-        'Binding os',
-        'NativeModule string_decoder' ],
-     versions:
-      { http_parser: '2.6.0',
-        node: '5.1.0',
-        v8: '4.6.85.31',
-        uv: '1.7.5',
-        zlib: '1.2.8',
-        ares: '1.10.1-DEV',
-        icu: '56.1',
-        modules: '47',
-        openssl: '1.0.2d' },
-     arch: 'x64',
-     platform: 'darwin',
-     release:
-      { name: 'node',
-        sourceUrl: 'https://nodejs.org/download/release/v5.1.0/node-v5.1.0.tar.gz',
-        headersUrl: 'https://nodejs.org/download/release/v5.1.0/node-v5.1.0-headers.tar.gz' },
-     argv: [ '/usr/local/bin/node' ],
-     execArgv: [],
-     env:
-      { PATH: '/usr/local/var/rbenv/shims:/usr/local/var/rbenv/shims:/Applications/SenchaSDKTools-2.0.0-beta3:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/azat/.rvm/bin:/Users/azat/bin',
-        TMPDIR: '/var/folders/q5/0zn95nld30b7fnhz5yywb52m0000gn/T/',
-        LOGNAME: 'azat',
-        XPC_FLAGS: '0x0',
-        HOME: '/Users/azat',
-        Apple_PubSub_Socket_Render: '/private/tmp/com.apple.launchd.byOyjyCo2f/Render',
-        LANG: 'en_US.UTF-8',
-        COLORFGBG: '7;0',
-        USER: 'azat',
-        ...
-        RBENV_ROOT: '/usr/local/var/rbenv',
-        _: '/usr/local/bin/node' },
-     pid: 74409,
-     features:
-      { debug: false,
-        uv: true,
-        ipv6: true,
-        tls_npn: true,
-        tls_alpn: true,
-        tls_sni: true,
-        tls_ocsp: true,
-        tls: true },
-     _needImmediateCallback: false,
-     execPath: '/usr/local/bin/node',
-     debugPort: 5858,
-     _startProfilerIdleNotifier: [Function: _startProfilerIdleNotifier],
-     _stopProfilerIdleNotifier: [Function: _stopProfilerIdleNotifier],
-     _getActiveRequests: [Function: _getActiveRequests],
-     _getActiveHandles: [Function: _getActiveHandles],
-     reallyExit: [Function: reallyExit],
-     abort: [Function: abort],
-     chdir: [Function: chdir],
-     cwd: [Function: cwd],
-     umask: [Function: umask],
-     getuid: [Function: getuid],
-     geteuid: [Function: geteuid],
-     setuid: [Function: setuid],
-     seteuid: [Function: seteuid],
-     setgid: [Function: setgid],
-     setegid: [Function: setegid],
-     getgid: [Function: getgid],
-     getegid: [Function: getegid],
-     getgroups: [Function: getgroups],
-     setgroups: [Function: setgroups],
-     initgroups: [Function: initgroups],
-     _kill: [Function: _kill],
-     _debugProcess: [Function: _debugProcess],
-     _debugPause: [Function: _debugPause],
-     _debugEnd: [Function: _debugEnd],
-     hrtime: [Function: hrtime],
-     dlopen: [Function: dlopen],
-     uptime: [Function: uptime],
-     memoryUsage: [Function: memoryUsage],
-     binding: [Function: binding],
-     _linkedBinding: [Function: _linkedBinding],
-     _events:
-      { newListener: [Function],
-        removeListener: [Function],
-        SIGWINCH: [Object] },
-     _rawDebug: [Function],
-     domain: [Getter/Setter],
-     _maxListeners: undefined,
-     EventEmitter:
-      { [Function: EventEmitter]
-        EventEmitter: [Circular],
-        usingDomains: true,
-        defaultMaxListeners: 10,
-        init: [Function],
-        listenerCount: [Function] },
-     _fatalException: [Function],
-     _exiting: false,
-     assert: [Function],
-     config: { target_defaults: [Object], variables: [Object] },
-     nextTick: [Function: nextTick],
-     _tickCallback: [Function: _tickDomainCallback],
-     _tickDomainCallback: [Function: _tickDomainCallback],
-     stdout: [Getter],
-     stderr: [Getter],
-     stdin: [Getter],
-     openStdin: [Function],
-     exit: [Function],
-     kill: [Function],
-     _eventsCount: NaN },
+  process: {...},
   GLOBAL: [Circular],
   root: [Circular],
   Buffer:
@@ -191,13 +74,7 @@ Or you can type `global` in Node REPL. The output would be similar to this:
         '/Users/azat/node_modules',
         '/Users/node_modules',
         '/node_modules' ] },
-  require:
-   { [Function: require]
-     resolve: [Function],
-     main: undefined,
-     extensions: { '.js': [Function], '.json': [Function], '.node': [Function] },
-     cache: {} },
-  _: [Circular],
+  require: {...}
 ```
 
 Let's cover the most important of them in more details.
@@ -237,7 +114,7 @@ global.name = 'React Quickly'
 console.log(name) // React Quickly
 ```
 
-This is explicit global scoping because we wrote `global.name`. This variable become available not only in the current script, but in all other scripts which this instance uses. For example you can set the global name variable in the main script and it will be accessible in imported modules. More on modules later. Let's explore implicit global scoping.
+This is explicit global scoping because we wrote `global.name`. This variable become available not only in the current script, but in all other scripts which this instance uses. For example you can set the global name variable in the main script and it will be accessible in imported modules. More on modules later in Unit 2. Let's explore implicit global scoping.
 
 When it comes to scoping, browser JavaScript was notorious for it's "buggy" behavior of leaking variables into a global scope. For example, if `var _user = {admin: false}` code is run in DevTools `var user` will create a global object `window._user`. 
 
@@ -249,8 +126,8 @@ So if you run this code in the DevTools console:
 user = {admin: false}
 var _user = {admin: false}
 
-console.log(_user, window._user, window._user)
-console.log(user, window.user, window.user)
+console.log(_user, window._user)
+console.log(user, window.user)
 ```
 
 You would get these results which illustrate that global window references were created:
@@ -259,6 +136,8 @@ You would get these results which illustrate that global window references were 
 Object {admin: false} Object {admin: false} Object {admin: false}
 Object {admin: false} Object {admin: false} Object {admin: false}
 ```
+
+In other words `_user`, `window._user`, `user` and `window.user` will return `{admin: false}`.
 
 Now let's replace `window` with global for Node. What the result of this snippet would be if you run it as a separate file (`$ node main.js`)?
 
@@ -274,12 +153,26 @@ The result will signify that the `var _user` did not create a global reference, 
 
 ```
 { admin: false } undefined undefined
-{ admin: false } { admin: false } { admin: false }
+{ admin: false }  { admin: false }
 ```
+
+In other words,
+
+* `console.log(_user)` returns `{ admin: false}`
+* `console.log(global._user)` and `console.log(GLOBAL._user)` return `undefined`
+
+While,
+
+* `console.log(user)` returns `{ admin: false}`
+* `console.log(global.user)` and `console.log(GLOBAL.user)` return { admin: false }
+
+`var _user = {admin: false}` did not create a global reference because we run the code in Node and it was a file. This is one of the differences between Node and browser JavaScript.
+
+Note: If you run the Node code in REPL, the result will be similar to browser JavaScript, i.e., the `global._user` will be created, because REPL works in a global scope.
 
 The conclusion: In Node, if you omit `var`, the global reference will be created implicitly. This can cause confusion; therefore, avoid doing implicit declarations. If you need to create a global reference, use explicit declaration `global.NAME = VALUE`.
 
-Note: If you run the Node code in REPL, the result will be similar to browser JavaScript, i.e., the `global._user` will be created, because REPL works in a global scope.
+
 
 ## Resources
 
