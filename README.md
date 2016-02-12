@@ -173,7 +173,6 @@ Note: If you run the Node code in REPL, the result will be similar to browser Ja
 The conclusion: In Node, if you omit `var`, the global reference will be created implicitly. This can cause confusion; therefore, avoid doing implicit declarations. If you need to create a global reference, use explicit declaration `global.NAME = VALUE`.
 
 
-
 ## Resources
 
 1. [Official Global Object Documentation](https://nodejs.org/api/globals.html)
