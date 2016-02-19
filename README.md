@@ -12,7 +12,7 @@ This lesson will cover the global object, its properties, differences between br
 
 ## Intro
 
-Node is JavaScript, right? Not exactly. While both Node and browser JavaScript are implementations of ECMAScript, they differ just as different flavors of browser JavaScript implementation can differ. For example, there might be some methods and functions in Internet Explorer or Firefox which are lacking in Safari or vice versa. 
+Node is JavaScript, right? Not exactly. While both Node and browser JavaScript are implementations of ECMAScript, they differ just as different flavors of browser JavaScript implementation can differ. For example, there might be some methods and functions in Internet Explorer or Firefox which are lacking in Safari or vice versa.
 
 So the bottom line is while most of the browser JavaScript implementations and Node are similar, for example, `console.log()`, `setTimeout()`, Array and String functions, they differ drastically when it comes to global methods and properties (a.k.a. interfaces). There's no `window` in Node!
 
@@ -83,31 +83,31 @@ Note: Another name for `global` is `GLOBAL`. They are aliases. Also, `global.use
 
 ## Global Object Properties
 
-So what are the Node-specific global interfaces? Here's the list of Node global interfaces which do not exist in browser JavaScript:
+So what are the Node-specific `global` object properties (a.k.a. interfaces)? Here's the list of Node global interfaces which come with Node.js and do not exist in browser JavaScript:
 
 * `process`: Contains the information about the system and environment, e.g., node version (`process.versions.node`)
 * `module`: Exports the functionality to be used by other programs/files, i.e., utilized to create modules
 * `exports`: Exports the functionality to be used by other programs. Alias of `module.exports`.
 * `require`: Imports the functionality from another file/module/package, i.e., utilizes modules
-* `Buffer`: Binary data type 
+* `Buffer`: Binary data type
 * `__dirname`: Path and folder name of the current script
-* `_filename`: Filename of the current script 
+* `_filename`: Filename of the current script
 
-Know that `global` object has interfaces specific to Node. There are interfaces that are the same as in browser JavaScript:
+Know that `global` object has interfaces specific to Node. You can also define your own global properties (object or functions). Alo, there are interfaces that are the same as in browser JavaScript:
 
-* `setInterval()`
-* `setTimeout()`
-* `console`
-* `clearTimeout(t)`
-* `clearInterval(t)`
+* `setInterval()`: Executes a function at a certain interval
+* `setTimeout()`: Executes a function with a certain delay
+* `console`: Print data in the terminal
+* `clearTimeout(t)`: Removes the function of the `setTimeout()`
+* `clearInterval(t)`: Removes the function of the `setInterval()`
 
-Note: Developers you can access them with or without referring to the `global` object. For example, both `global.process` and `process` work the same. 
+Note: Developers you can access them with or without referring to the `global` object. For example, both `global.process` and `process` work the same.
 
-`Process`, `modules` and `Buffer` require their own lessons, so we'll cover them one-by-one later. For now let's look more into `process`. 
+`Process`, `modules` and `Buffer` require their own lessons, so we'll cover them one-by-one later. For now let's look more into `process`.
 
 ## Explicit and Implicit Global Scoping
 
-Let's talk about scoping for a moment. We can attach any arbitrary (meaning we come up with a name) property to a `global` object explicitly, e.g., 
+Let's talk about scoping for a moment. We can attach any arbitrary (meaning we come up with a name) property to a `global` object explicitly, e.g.,
 
 ```js
 global.name = 'React Quickly'
@@ -116,9 +116,9 @@ console.log(name) // React Quickly
 
 This is explicit global scoping because we wrote `global.name`. This variable become available not only in the current script, but in all other scripts which this instance uses. For example you can set the global name variable in the main script and it will be accessible in imported modules. More on modules later in Unit 2. Let's explore implicit global scoping.
 
-When it comes to scoping, browser JavaScript was notorious for it's "buggy" behavior of leaking variables into a global scope. For example, if `var _user = {admin: false}` code is run in DevTools `var user` will create a global object `window._user`. 
+When it comes to scoping, browser JavaScript was notorious for it's "buggy" behavior of leaking variables into a global scope. For example, if `var _user = {admin: false}` code is run in DevTools `var user` will create a global object `window._user`.
 
-Note: If we don't use `var` the variable will be a `window` as well. 
+Note: If we don't use `var` the variable will be a `window` as well.
 
 So if you run this code in the DevTools console:
 
