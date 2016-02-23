@@ -103,7 +103,7 @@ Know that `global` object has interfaces specific to Node. You can also define y
 
 Note: Developers you can access them with or without referring to the `global` object. For example, both `global.process` and `process` work the same.
 
-`Process`, `modules` and `Buffer` require their own lessons, so we'll cover them one-by-one later. For now let's look more into `process`.
+`Process`, `modules` and `Buffer` require their own lessons, so we'll cover them one-by-one later.
 
 ## Explicit and Implicit Global Scoping
 
