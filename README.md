@@ -14,11 +14,11 @@ This lesson will cover the global object, its properties, differences between br
 
 Node is JavaScript, right? Not exactly. While both Node and browser JavaScript are implementations of ECMAScript, they differ just as different flavors of browser JavaScript implementation can differ. For example, there might be some methods and functions in Internet Explorer or Firefox which are lacking in Safari or vice versa.
 
-So the bottom line is while most of the browser JavaScript implementations and Node are similar, for example, `console.log()`, `setTimeout()`, Array and String functions, they differ drastically when it comes to global methods and properties (a.k.a. interfaces). There's no `window` in Node!
+So the bottom line is that while most of the browser JavaScript implementations and Node are similar, for example, `console.log()`, `setTimeout()`, Array and String functions, they differ drastically when it comes to global methods and properties (a.k.a. interfaces). There's no `window` in Node!
 
 ## Global Object
 
-Why and what exactly is the difference? You see, in browsers we don't have the ability to import modules or work with file system (I'm writing about ES5 mostly). We also limited in what information we can get from the environment. The server or Node code can do much more than the browser, so we need to introduce some global interfaces. They live on the `global` object. So you can print them with this statement:
+Why and what exactly is the difference? You see, in browsers we don't have the ability to import modules or work with a file system (we're primarily talking about ES5). We are also limited in what information we can get from the environment. The server or Node code can do much more than the browser, so we need to introduce some global interfaces. They live on the `global` object. So you can print them with this statement:
 
 ```js
 console.log(global)
@@ -77,7 +77,7 @@ Or you can type `global` in Node REPL. The output would be similar to this:
   require: {...}
 ```
 
-Let's cover the most important of them in more details.
+Let's cover the most important of them in more detail.
 
 Note: Another name for `global` is `GLOBAL`. They are aliases. Also, `global.user` and `GLOBAL.user` are the same.
 
@@ -101,22 +101,22 @@ Know that `global` object has interfaces specific to Node. You can also define y
 * `clearTimeout(t)`: Removes the function of the `setTimeout()`
 * `clearInterval(t)`: Removes the function of the `setInterval()`
 
-Note: Developers you can access them with or without referring to the `global` object. For example, both `global.process` and `process` work the same.
+Note: As developers, you can access them with or without referring to the `global` object. For example, both `global.process` and `process` work the same.
 
 `Process`, `modules` and `Buffer` require their own lessons, so we'll cover them one-by-one later.
 
 ## Explicit and Implicit Global Scoping
 
-Let's talk about scoping for a moment. We can attach any arbitrary (meaning we come up with a name) property to a `global` object explicitly, e.g.,
+Let's talk about scoping for a moment. We can attach any arbitrary property (i.e we come up with a name)to a `global` object explicitly. For example: 
 
 ```js
 global.name = 'React Quickly'
 console.log(name) // React Quickly
 ```
 
-This is explicit global scoping because we wrote `global.name`. This variable become available not only in the current script, but in all other scripts which this instance uses. For example you can set the global name variable in the main script and it will be accessible in imported modules. More on modules later in Unit 2. Let's explore implicit global scoping.
+This is explicit global scoping because we wrote `global.name`. This variable become available not only in the current script, but in all other scripts which this instance uses. For example you can set the global name variable in the main script and it will be accessible in imported modules. Let's explore implicit global scoping.
 
-When it comes to scoping, browser JavaScript was notorious for it's "buggy" behavior of leaking variables into a global scope. For example, if `var _user = {admin: false}` code is run in DevTools `var user` will create a global object `window._user`.
+When it comes to scoping, browser JavaScript was notorious for its "buggy" behavior of leaking variables into a global scope. For example, if `var _user = {admin: false}` code is run in DevTools `var user` will create a global object `window._user`.
 
 Note: If we don't use `var` the variable will be a `window` as well.
 
@@ -139,7 +139,7 @@ Object {admin: false} Object {admin: false} Object {admin: false}
 
 In other words `_user`, `window._user`, `user` and `window.user` will return `{admin: false}`.
 
-Now let's replace `window` with global for Node. What the result of this snippet would be if you run it as a separate file (`node main.js`)?
+Now let's replace `window` with global for Node. What would the result of this snippet be if you run it as a separate file (`node main.js`)?
 
 ```js
 user = {admin: false}
@@ -170,7 +170,7 @@ While,
 
 Note: If you run the Node code in REPL, the result will be similar to browser JavaScript, i.e., the `global._user` will be created, because REPL works in a global scope.
 
-The conclusion: In Node, if you omit `var`, the global reference will be created implicitly. This can cause confusion; therefore, avoid doing implicit declarations. If you need to create a global reference, use explicit declaration `global.NAME = VALUE`.
+The conclusion: In Node, if you omit `var`, the global reference will be created implicitly. This can cause confusion so therefore, avoid doing implicit declarations. If you need to create a global reference, use explicit declaration `global.NAME = VALUE`.
 
 
 ## Resources
