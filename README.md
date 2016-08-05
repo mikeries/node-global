@@ -93,7 +93,7 @@ So what are the Node-specific `global` object properties (a.k.a. interfaces)? He
 * `__dirname`: Path and folder name of the current script
 * `_filename`: Filename of the current script
 
-Know that `global` object has interfaces specific to Node. You can also define your own global properties (object or functions). Alo, there are interfaces that are the same as in browser JavaScript:
+Know that `global` object has interfaces specific to Node. You can also define your own global properties (object or functions). Also, there are interfaces that are the same as in browser JavaScript:
 
 * `setInterval()`: Executes a function at a certain interval
 * `setTimeout()`: Executes a function with a certain delay
@@ -184,3 +184,5 @@ The conclusion: In Node, if you omit `var`, the global reference will be created
 ---
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/node-global' title='node-global'>node-global</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/node-global'>Node Global Object</a> on Learn.co and start learning to code for free.</p>
