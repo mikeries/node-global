@@ -114,7 +114,7 @@ global.name = 'React Quickly'
 console.log(name) // React Quickly
 ```
 
-This is explicit global scoping because we wrote `global.name`. This variable become available not only in the current script, but in all other scripts which this instance uses. For example you can set the global name variable in the main script and it will be accessible in imported modules. Let's explore implicit global scoping.
+This is explicit global scoping because we wrote `global.name`. This variable becomes available not only in the current script, but in all other scripts which this instance uses. For example you can set the global name variable in the main script and it will be accessible in imported modules. Let's explore implicit global scoping.
 
 When it comes to scoping, browser JavaScript was notorious for its "buggy" behavior of leaking variables into a global scope. For example, if `var _user = {admin: false}` code is run in DevTools `var user` will create a global object `window._user`.
 
