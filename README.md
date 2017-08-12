@@ -133,8 +133,8 @@ console.log(user, window.user)
 You would get these results which illustrate that global window references were created:
 
 ```
-Object {admin: false} Object {admin: false} Object {admin: false}
-Object {admin: false} Object {admin: false} Object {admin: false}
+Object {admin: false} Object {admin: false}
+Object {admin: false} Object {admin: false}
 ```
 
 In other words `_user`, `window._user`, `user` and `window.user` will return `{admin: false}`.
@@ -183,6 +183,6 @@ The conclusion: In Node, if you omit `var`, the global reference will be created
 
 ---
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/node-global' title='node-global'>node-global</a> on Learn.co and start learning to code for free.</p>
+<p class='util--hide'>View <a href='https://learn.co/lessons/node-global'>Node Global Object</a> on Learn.co and start learning to code for free.</p>
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/node-global'>Node Global Object</a> on Learn.co and start learning to code for free.</p>
