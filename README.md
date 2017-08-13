@@ -183,6 +183,4 @@ The conclusion: In Node, if you omit `var`, the global reference will be created
 
 ---
 
-<p class='util--hide'>View <a href='https://learn.co/lessons/node-global'>Node Global Object</a> on Learn.co and start learning to code for free.</p>
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/node-global'>Node Global Object</a> on Learn.co and start learning to code for free.</p>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/node-global'>Node Global Object</a> on Learn.co and start learning to code for free.</p>
